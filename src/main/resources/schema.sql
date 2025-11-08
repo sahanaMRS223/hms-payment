@@ -1,0 +1,11 @@
+
+CREATE TABLE IF NOT EXISTS payments (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  bill_id BIGINT NOT NULL,
+  amount DECIMAL(10,2) NOT NULL,
+  method VARCHAR(50) NOT NULL,
+  reference VARCHAR(100),
+  status VARCHAR(20) NOT NULL,
+  paid_at DATETIME,
+  idempotency_key VARCHAR(255) UNIQUE
+);
